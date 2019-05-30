@@ -363,6 +363,11 @@ open class BaseChatViewController: UIViewController, UICollectionViewDataSource,
     */
     public var chatItemsDecorator: ChatItemsDecoratorProtocol?
 
+    /**
+     You can use a cell decorator to apply changes to every collection view cell that is dequeued from a collection view.
+     */
+    public var cellDecorator: ChatCollectionViewCellDecorator?
+
     open func createCollectionViewLayout() -> UICollectionViewLayout {
         let layout = ChatCollectionViewLayout()
         layout.delegate = self
