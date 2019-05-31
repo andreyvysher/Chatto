@@ -25,5 +25,5 @@
 import UIKit
 
 public protocol ChatCollectionViewCellDecorator: AnyObject {
-    func decorate(cell: UICollectionViewCell, at indexPath: IndexPath) -> UICollectionViewCell
+    func decorate(cell: UICollectionViewCell, at indexPath: IndexPath)
 }

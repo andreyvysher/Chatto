@@ -36,7 +36,7 @@ extension BaseChatViewController: ChatCollectionViewLayoutDelegate {
         let cell = presenter.dequeueCell(collectionView: collectionView, indexPath: indexPath)
         let decorationAttributes = self.decorationAttributesForIndexPath(indexPath)
         presenter.configureCell(cell, decorationAttributes: decorationAttributes)
-        return self.cellDecorator?.decorate(cell: cell, at: indexPath) ?? cell
+        return cell
     }
 
     @objc(collectionView:didEndDisplayingCell:forItemAtIndexPath:)
@@ -81,6 +81,8 @@ extension BaseChatViewController: ChatCollectionViewLayoutDelegate {
         } else {
             presenter.cellWillBeShown(cell)
         }
+
+        self.cellDecorator?.decorate(cell: cell, at: indexPath)
     }
 
     @objc(collectionView:shouldShowMenuForItemAtIndexPath:)

@@ -364,7 +364,7 @@ open class BaseChatViewController: UIViewController, UICollectionViewDataSource,
     public var chatItemsDecorator: ChatItemsDecoratorProtocol?
 
     /**
-     You can use a cell decorator to apply changes to every collection view cell that is dequeued from a collection view.
+     You can use a cell decorator to apply changes to every collection view cell that is about to appear in the visible area.
      */
     public var cellDecorator: ChatCollectionViewCellDecorator?
 
