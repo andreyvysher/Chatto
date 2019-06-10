@@ -171,16 +171,16 @@ extension BaseChatViewController {
             usesBatchUpdates = !wantsReloadData && !mustDoReloadData
         }
 
-        let scrollAction: ScrollAction
-        do { // Scroll action
-            if updateType != .pagination && self.isScrolledAtBottom() {
-                scrollAction = .scrollToBottom
-            } else {
-                let (oldReferenceIndexPath, newReferenceIndexPath) = self.referenceIndexPathsToRestoreScrollPositionOnUpdate(itemsBeforeUpdate: self.chatItemCompanionCollection, changes: changes)
-                let oldRect = self.rectAtIndexPath(oldReferenceIndexPath)
-                scrollAction = .preservePosition(rectForReferenceIndexPathBeforeUpdate: oldRect, referenceIndexPathAfterUpdate: newReferenceIndexPath)
-            }
-        }
+        let scrollAction: ScrollAction = .scrollToBottom
+//        do { // Scroll action
+//            if updateType != .pagination && self.isScrolledAtBottom() {
+//                scrollAction = .scrollToBottom
+//            } else {
+//                let (oldReferenceIndexPath, newReferenceIndexPath) = self.referenceIndexPathsToRestoreScrollPositionOnUpdate(itemsBeforeUpdate: self.chatItemCompanionCollection, changes: changes)
+//                let oldRect = self.rectAtIndexPath(oldReferenceIndexPath)
+//                scrollAction = .preservePosition(rectForReferenceIndexPathBeforeUpdate: oldRect, referenceIndexPathAfterUpdate: newReferenceIndexPath)
+//            }
+//        }
 
         let myCompletion: () -> Void
         do { // Completion
